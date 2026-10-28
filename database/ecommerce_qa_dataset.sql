@@ -1,13 +1,4 @@
-
--- =====================================================
--- PROJECT: E-commerce Database QA Testing
--- DIALECT: MySQL 8.0
--- DATA: Synthetic test data only
--- PURPOSE: Practice positive, negative, and edge cases
--- =====================================================
-
 -- TABLE 1: CUSTOMERS
-SET NAMES utf8mb4;
 DROP TABLE IF EXISTS customers;
 
 CREATE TABLE customers (
@@ -79,10 +70,11 @@ INSERT INTO customers VALUES
 (151, 'Leo Schmidt', 'leo.schmidt11@yahoo.com', '0613686393', ' ACTIVE ', '2026-05-06'),
 (155, 'Ruby Evans', 'ruby.evans76@outlook.com', '0957912869', 'ACTIVE', NULL),
 (160, 'Adrian Costa', 'adrian.costa50@hotmail.com', '0954300029', 'ACTIVE', '2024-02-29'),
-(162, 'Freya Nilsson', 'freya.nilsson49@gmail.com', '0827532175', 'ACTIVE', DATE_ADD(CURDATE(), INTERVAL 1 DAY)),
-(163, 'Victor Lim', 'victor.lim10@gmail.com', '0656821993', 'ACTIVE', CURDATE());
+(162, 'Freya Nilsson', 'freya.nilsson49@gmail.com', '0827532175', 'ACTIVE', CURRENT_DATE + 1),
+(163, 'Victor Lim', 'victor.lim10@gmail.com', '0656821993', 'ACTIVE', CURRENT_DATE);
 
 -- TABLE 2: ADDRESSES
+DROP TABLE IF EXISTS addresses;
 CREATE TABLE addresses (
     address_id INT PRIMARY KEY,
     customer_id INT,
@@ -104,6 +96,7 @@ INSERT INTO addresses VALUES
 (108, 1, 'SHIPPING', '99 Sathorn Road', 'Bangkok', '10120', 1);
 
 -- TABLE 3: CATEGORIES
+DROP TABLE IF EXISTS categories
 CREATE TABLE categories (
     category_id INT PRIMARY KEY,
     category_name VARCHAR(100)
@@ -116,6 +109,7 @@ INSERT INTO categories VALUES
 (4, 'Accessories');
 
 -- TABLE 4: PRODUCTS
+DROP TABLE IF EXISTS products
 CREATE TABLE products (
     product_id INT PRIMARY KEY,
     category_id INT,
@@ -142,6 +136,7 @@ INSERT INTO products VALUES
 (213, 3, 'HOME-003', 'Another Duplicate SKU', 55.00, 8, 'ACTIVE');
 
 -- TABLE 5: ORDERS
+DROP TABLE IF EXISTS orders
 CREATE TABLE orders (
     order_id INT PRIMARY KEY,
     customer_id INT,
@@ -196,6 +191,7 @@ INSERT INTO orders (
  40.00, 0.00, 30.00, 0.00, 70.00);
  
 -- TABLE 6: ORDER ITEMS
+DROP TABLE IF EXISTS order_items
 CREATE TABLE order_items (
     order_item_id INT PRIMARY KEY,
     order_id INT,
@@ -220,6 +216,7 @@ INSERT INTO order_items VALUES
 (13, 1001, 201, 0, 100.00);
 
 -- TABLE 7: PAYMENTS
+DROP TABLE IF EXISTS payments
 CREATE TABLE payments (
     payment_id INT PRIMARY KEY,
     order_id INT,
@@ -274,6 +271,7 @@ INSERT INTO payments (
  50.00, 'TXN-NEW-5021');
 
 -- TABLE 8: SHIPMENTS
+DROP TABLE IF EXISTS shipments
 CREATE TABLE shipments (
     shipment_id INT PRIMARY KEY,
     order_id INT,
