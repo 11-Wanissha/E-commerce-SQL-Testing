@@ -7,6 +7,9 @@
 -- =====================================================
 
 -- TABLE 1: CUSTOMERS
+SET NAMES utf8mb4;
+DROP TABLE IF EXISTS customers;
+
 CREATE TABLE customers (
     customer_id INT PRIMARY KEY,
     full_name VARCHAR(100),
@@ -25,6 +28,59 @@ INSERT INTO customers VALUES
 (6, 'Farah Khan', 'farah@example.com', NULL, 'ACTIVE', '2026-05-05'),
 (7, 'George Miller', '   ', '0877777777', 'ACTIVE', '2026-06-12'),
 (8, 'Hana Davis', 'hana@example.com', '0888888888', 'SUSPENDED', '2026-07-01');
+
+INSERT INTO customers VALUES
+(0, 'Somchai Prasert', 'somchai.prasert16@outlook.com', '0959586960', 'ACTIVE', '2026-09-14'),
+(-1, 'Naree Wongsakul', 'naree.wongsakul14@hotmail.com', '0988056747', 'ACTIVE', '2026-10-19'),
+(2147483647, 'Anan Chaiyasit', 'anan.chaiyasit74@icloud.com', '0659236009', 'ACTIVE', '2026-10-11'),
+(108, NULL, 'pimchanok.srisuk99@icloud.com', '0925025425', 'ACTIVE', '2026-04-02'),
+(109, '', 'kittipong.thongdee79@gmail.com', '0825819091', 'ACTIVE', '2026-04-27'),
+(209, '   ', 'supansa.rattanakorn58@gmail.com', '0659225646', 'ACTIVE', '2026-09-22'),
+(111, 'A', 'nattapong.boonmee41@hotmail.com', '0915219689', 'ACTIVE', '2026-06-30'),
+(112, REPEAT('A',99), 'warunee.jaidee46@yahoo.com', '0629616569', 'ACTIVE', '2026-09-12'),
+(113, REPEAT('A',100), 'chaiwat.suksan10@outlook.com', '0825900991', 'ACTIVE', '2026-06-14'),
+(115, '  Alice Johnson  ', 'ratchanee.phromma59@hotmail.com', '0616184138', 'ACTIVE', '2026-04-08'),
+(116, 'สมชาย ใจดี', 'thanakorn.intarasut91@outlook.com', '0898735513', 'ACTIVE', '2026-07-19'),
+(117, 'Sean O''Brien', 'siriporn.kaewmanee12@yahoo.com', '0989362688', 'ACTIVE', '2026-05-01'),
+(118, 'x''; DROP TABLE customers;--', 'piyawat.saetang55@icloud.com', '0649238128', 'ACTIVE', '2026-07-12'),
+(119, '12345', 'jirapat.chantarasri68@outlook.com', '0658045862', 'ACTIVE', '2026-08-24'),
+(219, '@@@@', 'wipawee.lertsiri62@icloud.com', '0951425740', 'ACTIVE', '2026-08-27'),
+(121, 'Teerapong Sirisuk', '', '0863164241', 'ACTIVE', '2026-04-14'),
+(124, 'Araya Phetcharat', 'ALICE@EXAMPLE.COM', '0629778116', 'ACTIVE', '2026-09-20'),
+(125, 'Pornthip Charoensuk', 'john.doe@example.com', '0828204296', 'ACTIVE', '2026-07-31'),
+(126, 'Sakda Wattana', 'first.last+tag@example.co.th', '0839088515', 'ACTIVE', '2026-05-30'),
+(127, 'Malee Sombat', 'aliceexample.com', '0653047042', 'ACTIVE', '2026-09-09'),
+(128, 'Krit Anuwat', 'alice@', '0628663770', 'ACTIVE', '2026-09-21'),
+(129, 'Napat Siriwan', '@example.com', '0925211189', 'ACTIVE', '2026-08-23'),
+(130, 'Duangjai Prakobkit', 'a@@example.com', '0916161129', 'ACTIVE', '2026-08-20'),
+(131, 'Ekkachai Ruangrit', 'ali ce@example.com', '0649420478', 'ACTIVE', '2026-09-27'),
+(132, 'Nuttaya Khamsai', 'alice@example', '0927743569', 'ACTIVE', '2026-07-21'),
+(133, 'Emily Carter', ' alice2@example.com ', '0865938778', 'ACTIVE', '2026-06-09'),
+(134, 'Daniel Reyes', CONCAT('a@', REPEAT('d',60), '.', REPEAT('d',60), '.', REPEAT('d',22), '.com'), '0811555481', 'ACTIVE', '2026-05-10'),
+(137, 'Sophie Laurent', 'sophie.laurent84@icloud.com', '', 'ACTIVE', '2026-07-28'),
+(237, 'Marcus Webb', 'marcus.webb67@yahoo.com', '   ', 'ACTIVE', '2026-07-03'),
+(139, 'Hannah Fischer', 'hannah.fischer26@outlook.com', '081-111-1111', 'ACTIVE', '2026-09-26'),
+(239, 'Liam Connor', 'liam.connor63@yahoo.com', '+66811111111', 'ACTIVE', '2026-08-10'),
+(339, 'Olivia Martin', 'olivia.martin99@yahoo.com', '081 111 1111', 'ACTIVE', '2026-07-22'),
+(439, 'Noah Anderson', 'noah.anderson72@gmail.com', '08abc11111', 'ACTIVE', '2026-06-15'),
+(140, 'Mia Tanaka', 'mia.tanaka41@yahoo.com', '0811111111', 'ACTIVE', '2026-04-27'),
+(141, 'Lucas Meyer', 'lucas.meyer57@icloud.com', '081111111', 'ACTIVE', '2026-06-07'),
+(241, 'Isabella Rossi', 'isabella.rossi58@hotmail.com', '08111111111', 'ACTIVE', '2026-07-19'),
+(142, 'Ethan Walker', 'ethan.walker94@yahoo.com', '1811111111', 'ACTIVE', '2026-04-18'),
+(143, 'Grace Kim', 'grace.kim84@outlook.com', CONCAT('0', REPEAT('8',29)), 'ACTIVE', '2026-08-07'),
+(147, 'Oliver Grant', 'oliver.grant48@gmail.com', '0867900650', 'DELETED', '2026-05-09'),
+(247, 'Chloe Dubois', 'chloe.dubois58@gmail.com', '0821003589', 'PENDING', '2026-07-26'),
+(347, 'Henry Clarke', 'henry.clarke75@icloud.com', '0652393608', '123', '2026-09-05'),
+(148, 'Zoe Patel', 'zoe.patel26@hotmail.com', '0821749254', NULL, '2026-10-11'),
+(149, 'Samuel Ortiz', 'samuel.ortiz70@outlook.com', '0616993671', '', '2026-05-11'),
+(249, 'Ava Mitchell', 'ava.mitchell1@outlook.com', '0619254204', '   ', '2026-09-25'),
+(150, 'Jack Thompson', 'jack.thompson93@hotmail.com', '0954740105', 'active', '2026-08-01'),
+(250, 'Nina Petrova', 'nina.petrova76@hotmail.com', '0989467819', 'Active', '2026-06-15'),
+(151, 'Leo Schmidt', 'leo.schmidt11@yahoo.com', '0613686393', ' ACTIVE ', '2026-05-06'),
+(155, 'Ruby Evans', 'ruby.evans76@outlook.com', '0957912869', 'ACTIVE', NULL),
+(160, 'Adrian Costa', 'adrian.costa50@hotmail.com', '0954300029', 'ACTIVE', '2024-02-29'),
+(162, 'Freya Nilsson', 'freya.nilsson49@gmail.com', '0827532175', 'ACTIVE', DATE_ADD(CURDATE(), INTERVAL 1 DAY)),
+(163, 'Victor Lim', 'victor.lim10@gmail.com', '0656821993', 'ACTIVE', CURDATE());
 
 -- TABLE 2: ADDRESSES
 CREATE TABLE addresses (
